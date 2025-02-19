@@ -91,9 +91,11 @@ I'm a Web Developer specializing in Front-end technologies. I enjoy coding, expl
 <h2 align="center" class="section-heading">Buy me a coffee ☕️</h2>
 
 If you like my work and want to support me, you can buy me a coffee. I would really appreciate it!
-
+<div align="center">
+    
 <a href="https://www.buymeacoffee.com/antoniohgdev" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-violet.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
-
+    
+</div>
 
 <div align="center">
 <!-- Devicons: https://devicon.dev/ -->
