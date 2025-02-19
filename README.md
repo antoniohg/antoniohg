@@ -8,7 +8,7 @@
 
 ## Hi there 👋
 
-I'm a Web Developer specializing in Front-end technologies. I enjoy coding, exploring new technologies, and creating user-friendly interfaces.
+I'm a Front-end Web Developer passionate about coding, exploring new technologies, and creating user-friendly web applications. I love building beautiful, functional interfaces and am always eager to learn and collaborate on new projects.
 
 </div>
 
@@ -26,13 +26,13 @@ I'm a Web Developer specializing in Front-end technologies. I enjoy coding, expl
         <img src="https://img.shields.io/badge/Bluesky-0285FF?style=for-the-badge&logo=bluesky&logoColor=white" alt="Bluesky" />   
     </a>
 </div>
-
+<br>
 <div align="center">
     <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=antoniohg&theme=github_dark" alt="antoniohg's GitHub Stats" />
 </div>
 
 
-<h2 class="section-heading text-center">💻 Programming Languages</h2>
+<h2 align="center" class="section-heading">💻 Programming Languages</h2>
 <p> As a Web Developer, I specialize in a variety of programming languages that enable me to build dynamic, interactive, and responsive web applications. Here's a snapshot of the programming languages I work with:</p>
 <div align="center">
 
