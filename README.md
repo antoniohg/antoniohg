@@ -1,32 +1,3 @@
-<style>
-    .section-heading {
-        text-align: center;
-        font-size: 1.5rem;
-        margin-top: 3rem;
-        margin-bottom: 1rem;
-        &:before {
-            content: "";
-            display: block;
-            width: 100px;
-            height: 2px;
-            background-color: #333;
-            margin: 0 auto 1rem;
-        }
-
-        &:after {
-            content: "";
-            display: block;
-            width: 100px;
-            height: 2px;
-            background-color: #333;
-            margin: 1rem auto 0;
-        }
-    }
-    .text-center {
-        text-align: center;
-    }
-</style>
-
 <!-- 
  Header image generated with Capsule Render:
  https://github.com/kyechan99/capsule-render?tab=readme-ov-file#wave 
