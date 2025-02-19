@@ -2,7 +2,7 @@
  Header image generated with Capsule Render:
  https://github.com/kyechan99/capsule-render?tab=readme-ov-file#wave 
 -->
-![header](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=300&section=header&text=antoniohg&desc=🧑‍💻%20FRONT%20END%20DEVELOPER%20🧑‍💻&fontSize=90&animation=fadeIn&fontColor=ffffff&fontAlignY=38)
+![header](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=300&section=header&text=antoniohg&desc=FRONT%20END%20DEVELOPER&fontSize=90&animation=fadeIn&fontColor=ffffff&fontAlignY=38)
 
 <div class="text-center"> 
 
