@@ -7,7 +7,7 @@
 
 I've been building for the web since 2009, when I designed and built the site for [Revista Exégesis](https://revista-exegesis.com), a collaborative magazine that is still online. In 2013 I joined Scalefast as its first front-end engineer and helped it grow from 8 people to over 300 before ESW acquired it, where I now work as an engineering manager. Along the way I've built e-commerce platforms for international brands in video games, beauty, sportswear and consumer goods.
 
-I still write code every day, now with AI agents in the loop. This is where my side projects live.
+I still write code every day, now with AI agents in the loop.
 
 ## Now
 
