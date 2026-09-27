@@ -7,7 +7,7 @@
 
 I've been building for the web since 2009, when I designed and built the site for [Revista Exégesis](https://revista-exegesis.com), a collaborative magazine that is still online. Since then I've built front ends of every size, including e-commerce platforms for international brands in video games, beauty, sportswear and consumer goods, and these days I also lead engineering teams.
 
-I still write code every day, now with AI agents in the loop. This is where my side projects live.
+I still write code every day, now with AI agents in the loop.
 
 ## Now
 
