@@ -3,7 +3,7 @@
 
 - header: the sentence split into LLM tokens, desktop (1200px) and mobile (600px).
 - footer: the <|endoftext|> token, desktop and mobile.
-- contact/: GitHub-style link buttons, one per network.
+- contact/: chip-shaped link buttons, one per network.
 
 Each image has light and dark versions. Fonts are subset through the Google Fonts
 `text=` API and embedded as base64, so every SVG renders the same everywhere.
@@ -122,31 +122,38 @@ def footer_mobile(mode):
     return endoftext(mode, 600, 26, 38)
 
 # ─────────────────────────── contact buttons ───────────────────────────
-# GitHub style: subtle background, border and the logo in its brand colour.
+# Filled pills in the network's colour with a soft glow of the same colour underneath.
 # Each button is the whole link, so its alt text in the README names the link.
 ICON_SRC = {
-    "cv": "https://cdn.jsdelivr.net/npm/@primer/octicons@19.38.0/build/svg/file-24.svg",
     "linkedin": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/linkedin/linkedin-plain.svg",
     "bluesky": "https://cdn.jsdelivr.net/npm/simple-icons@16.32.0/icons/bluesky.svg",
-    "x": "https://cdn.jsdelivr.net/npm/simple-icons@16.32.0/icons/x.svg",
+    # The X logo, labelled "Twitter".
+    "twitter": "https://cdn.jsdelivr.net/npm/simple-icons@16.32.0/icons/x.svg",
 }
-# Logo colour per theme; None uses the text colour (X has no brand colour).
-BRAND = {"cv": ("#8250df", "#a371f7"), "linkedin": ("#0a66c2", "#0a66c2"), "bluesky": ("#0085ff", "#0085ff"), "x": None}
-# Label advance widths in em for Geist 500, measured in the browser.
-LABEL_EM = {"CV": 1.381, "LinkedIn": 3.969, "Bluesky": 3.706, "X": .631}
-CONTACT = [("cv", "CV"), ("linkedin", "LinkedIn"), ("bluesky", "Bluesky"), ("x", "X")]
+# Fill and label colour per theme (light, dark). Brand colours, darkened where needed so the white label
+# keeps at least 4.5:1 contrast (WCAG AA). X has no brand colour: black, or white in dark mode.
+BRAND = {"linkedin": (("#0a66c2", "#ffffff"),) * 2,
+         "bluesky": (("#0070dd", "#ffffff"),) * 2, "twitter": (("#000000", "#ffffff"), ("#ffffff", "#000000"))}
+# Label advance widths in em for Geist 600, measured in the browser.
+LABEL_EM = {"LinkedIn": 4.064, "Bluesky": 3.807, "Twitter": 3.358}
+CONTACT = [("linkedin", "LinkedIn"), ("bluesky", "Bluesky"), ("twitter", "Twitter")]
+# Room around the pill for the glow; it also spaces the buttons, so the README needs no separators.
+GLOW = dict(side=3, top=2, bottom=9)
 
 def contact_button(name, label, src, mode):
-    p = GH[mode]
-    logo = BRAND[name][mode == "dark"] if BRAND[name] else p["fg"]
+    fill, ink = BRAND[name][mode == "dark"]
     vb = float(re.search(r'viewBox="[\d.]+ [\d.]+ ([\d.]+)', src).group(1))
     paths = "".join(f'<path d="{d}"/>' for d in re.findall(r'<path[^>]*\sd="([^"]+)"', src))
-    fs, h, pad, ic, gap = 16, 36, 12, 16, 8
+    fs, h, pad, ic, gap = 13, 30, 10, 14, 5
     w = round(pad + ic + gap + LABEL_EM[label] * fs + pad)
-    body = (f'<rect x=".5" y=".5" width="{w - 1}" height="{h - 1}" rx="6" fill="$subtle" stroke="$border"/>'
-            f'<g transform="translate({pad} {(h - ic) / 2}) scale({ic / vb:.4f})" fill="{logo}">{paths}</g>'
-            + T(pad + ic + gap, f"{h / 2 + fs * .35:.1f}", label, "l"))
-    return svg(w, h, label, f".l{{font:500 {fs}px '{SANS}';fill:$fg}}", body, [(SANS, 500)], p)
+    x, y = GLOW["side"], GLOW["top"]
+    body = (f'<defs><filter id="glow" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="3"/></filter></defs>'
+            f'<rect x="{x + 4}" y="{y + 5}" width="{w - 8}" height="{h - 2}" rx="{h / 2}" fill="{fill}" opacity=".45" filter="url(#glow)"/>'
+            f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{h / 2}" fill="{fill}"/>'
+            f'<g transform="translate({x + pad} {y + (h - ic) / 2}) scale({ic / vb:.4f})" fill="{ink}">{paths}</g>'
+            + T(x + pad + ic + gap, f"{y + h / 2 + fs * .35:.1f}", label, "l"))
+    W, H = w + 2 * GLOW["side"], h + GLOW["top"] + GLOW["bottom"]
+    return svg(W, H, label, f".l{{font:600 {fs}px '{SANS}';fill:{ink}}}", body, [(SANS, 600)], GH[mode])
 
 # ─────────────────────────── build ───────────────────────────
 def write(path, s):
