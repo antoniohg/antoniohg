@@ -2,7 +2,7 @@
   <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="https://readme-headers.antoniohg.workers.dev/header.svg?theme=dark&layout=mobile" />
   <source media="(max-width: 600px)" srcset="https://readme-headers.antoniohg.workers.dev/header.svg?layout=mobile" />
   <source media="(prefers-color-scheme: dark)" srcset="https://readme-headers.antoniohg.workers.dev/header.svg?theme=dark" />
-  <img src="https://readme-headers.antoniohg.workers.dev/header.svg" alt="antoniohg writes software… and the rest of the sentence is sampled at random on each visit, like a language model would, for example 'with people and with models.' It is drawn as coloured LLM tokens, with a bar under each token showing its probability." />
+  <img src="https://readme-headers.antoniohg.workers.dev/header.svg" alt="antoniohg writes software… followed by a completion sampled at random on each visit, drawn as LLM tokens with their probabilities." />
 </picture>
 
 I've been building for the web since 2009, when I designed and built the site for [Revista Exégesis](https://revista-exegesis.com), a collaborative magazine that is still online. Since then I've built front ends of every size, including e-commerce platforms for international brands in video games, beauty, sportswear and consumer goods, and these days I also lead engineering teams.
